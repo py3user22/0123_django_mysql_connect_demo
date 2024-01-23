@@ -69,7 +69,32 @@
         | .. }<br>
         } <br>
     </p>
+    <p>
+        EE <br>
+        _____# create a new user in cli <br>----------------------<br>
+        create user 'admindjango'@'localhost' IDENTIFIED BY 'employee@123!' ; <br>
+        <br>
+        ____# give user permissions for the database <br>
+        GRANT ALL ON *.* TO 'admindjango'@'localhost'; <br>
+        <br>
+        ____# flush privileges cmd <br>
+        FLUSH PRIVILEGES ; <br>
+        <br><br>
+        ____#ex2..  settings.py edit <br>-------------------------<br>
+        DATABASES = {<br>
+        | .. 'default': {<br>
+        | ...... 'ENGINE': 'django.db.backends.mysql', <br>
+        | ...... 'NAME': 'menu_db', <br>
+        | ...... 'HOST': '127.0.0.1', <br>
+        | ...... 'PORT': '3306', <br>
+        | ...... 'USER': 'admindjango', <br>
+        | ...... 'PASSWORD': 'employee@123!', <br>
 
+        | .. }<br>
+        } <br>
+
+
+    </p>
 
 
 </body>
