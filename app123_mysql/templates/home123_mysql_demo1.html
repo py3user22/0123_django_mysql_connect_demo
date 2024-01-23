@@ -7,12 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <style>
         p {border: 3px dashed green; padding: 5px;} p:hover {color: blue;}
+        .grey {color: grey;} .red {color: red;}
     </style>
     <title>0123 mysql install on django demo1</title>
 </head>
 <body>
     <h2>mysql_demo1 install django</h2>
     <p>
+        AA <br>
         __# mysql install on django demo1 <br>-----------------------<br>
         1 | pipenv shell <br>
         2 | pipenv install mysqlclient <br>
@@ -20,11 +22,55 @@
         3 | from terminal connect to mysql server <br>
         | .. mysql -u root -p <br>
         | <br>
+        | ______# to specify the host use -h <br>
         | .. mysql -u root -h 127.0.0.1 -p <br>
-
-
         <br><br>
     </p>
+    <p>
+        BB <br>
+        <a href="grey" class="grey">
+        ____#0123 powershell cmd to connect to mysql server locally <br>------------------------------</a> <br>
+            | <a href="red" class="red">$password </a> = ConvertTo-SecureString 'your_password_here' -AsPlainText -Force <br>
+            | <a href="red" class="red">$credential </a> = New-Object System.Management.Automation.PSCredential ('your_username_here',<a href="red" class="red">$password </a>) <br>
+            | <br>
+            | Connect-MySqlServer -Port "3306" -Credential <a href="red" class="red">$credential </a> -ComputerName 'localhost' -Database "your_database" <br>
+            <br><br>
+    </p>
+    <p>
+        CC <br>
+        _______#0123 error msg fix for cmd not found for mysql in Powershell <br>------------------------------<br>
+        ____# copy path to mysql server bin <br>
+        "C:\Program Files\MySQL\MySQL Server 8.3\bin" <br>
+        <br>
+        ___# open system properties window | windows key + pause/break key <br>
+        | .. click advanced tab >> environment variables button <br>
+        | <br>
+        | .. section ' System variables ' >> find variable ' PATH '  > click edit <br>
+        | <br>
+        | .. Edit environment variable window >> click. New button, >> past in bin folder path <br>
+        | <br>
+        | click ok to save >> restart powershell to try mysql cmd again <br>
+        <br><br>
+    </p>
+    <p>
+        DD <br>
+        ______# create new db and then edit the settings.py <br>---------------------------------<br>
+        create database littlelemon; <br>
+        <br>
+        _____# settings.py > edit databases section to update info <br>
+        DATABASES = {<br>
+        | .. 'default': {<br>
+        | ...... 'ENGINE': 'django.db.backends.mysql', <br>
+        | ...... 'NAME': 'littlelemon', <br>
+        | ...... 'HOST': 'localhost', <br>
+        | ...... 'USER': 'root', <br>
+        | ...... 'PASSWORD': 'Xy-@jjk244--P', <br>
+        | ...... 'PORT': '', <br>
+        | .. }<br>
+        } <br>
+    </p>
+
+
 
 </body>
 </html>
